@@ -3,22 +3,22 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: k8s-demo-app
-  name: k8s-demo-app
+    app: sbms-app
+  name: sbms-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: k8s-demo-app
+      app: sbms-app
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: k8s-demo-app
+        app: sbms-app
     spec:
       containers:
-      - image: hamvasaron/sbms
+      - image: docker.io/hamvasaron/sbms:0.0.1-SNAPSHOT
         name: sbms
         resources: {}
 status: {}
