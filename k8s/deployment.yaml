@@ -18,7 +18,7 @@ spec:
         app: sbms-app
     spec:
       containers:
-      - image: docker.io/hamvasaron/sbms:0.0.1-SNAPSHOT
+      - image: "docker.io/hamvasaron/sbms:latest"
         name: sbms
         resources: {}
 status: {}

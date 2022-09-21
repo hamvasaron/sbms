@@ -1,0 +1,18 @@
+apiVersion: skaffold/v2beta5
+kind: Config
+metadata:
+  name: sbms-app
+build:
+  artifacts:
+    - image: docker.io/hamvasaron/sbms
+      buildpacks:
+        builder: gcr.io/paketo-buildpacks/builder:base-platform-api-0.3
+        dependencies:
+          paths:
+            - src
+            - pom.xml
+deploy:
+  kubectl:
+    manifests:
+      - k8s/deployment.yaml
+      - k8s/service.yaml
